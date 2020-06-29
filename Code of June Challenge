@@ -1,0 +1,74 @@
+### This is code for the Moonshot June 2020 Student Challenge ###
+### Creator - Felipe.C ###
+    ### To complete the challenge your application will need to have three main features:
+    ### 1. It must allow users to add new books to the collection.
+    ### 2. The application must allow users to view all the books in their collection.
+    ### 3. The application must allow users to find a book within their collection by any of its attributes.
+
+#TO BE PROCESSED THROUGH IDLE###
+import time
+
+print("Welcome to the Library of Modern Knowledge & Power. There are many books available to search for and read.")
+time.sleep(3)
+print("You can search using any of the following categories: ")
+time.sleep(1)
+print("\tTitle: ")
+time.sleep(0.5)
+print("\tAuthor: ")
+time.sleep(0.5)
+print("\tGenre: ")
+time.sleep(0.5)
+print("\tPublisher: ")
+time.sleep(0.5)
+print("\tYear:")
+time.sleep(0.5)
+print("You can also add new books and view all your books in your collection.")
+time.sleep(2)
+print(".")
+time.sleep(0.5)
+print("..")
+time.sleep(0.5)
+print("...")
+time.sleep(0.5)
+
+book_collection={}#start collection with empty dictionary
+
+active = True #flag
+while active:
+    time.sleep(2)
+    question = input("\nWhat would you like to do?"
+                     "\n\t'Add', 'Search' or 'View' a book?"
+                     "\n\tIf you would like to see how many books in your collection, type 'See'."
+                     "\n\tIf you would like to end, type 'End'. ")
+    
+    if question == "add":
+
+        book_add_title = input("Enter the title of the book to which is being added: ")
+        book_add_author = input("Enter the author of the book which is being added: ")
+        book_add_year = input("Enter the year the book was released: ")
+
+	# store the responses in a dictionary
+        book_collection[book_add_title] = book_add_author
+        book_collection[book_add_author] = book_add_author
+        book_collection[book_add_year] = book_add_year
+
+        time.sleep(0.5)
+        print("\n\tWonderful. You now have a total of " + str(len(book_collection)) + " books in your collection")
+        time.sleep(1)
+    #elif question == "search": #this is to search the books in the list.
+         
+
+    elif question == "view": #this is to view the books in the list.
+        print("Here is a list of all your books " + int(book_collection(book_add_title)))
+          
+    elif question == "see": #this is to view the total number of books in the list.
+        print("\n\tOk, you now have " + str(len(book_collection)) + " books in your collection")
+        time.sleep(2)
+    else:
+        if question == 'end':
+            active = False
+            print("\nYou have " + str(len(book_collection)) + " books in your collection. \nGoodbye.\n")
+
+for book_add_title in book_collection.items():
+    print("\nYou now have " + str(len(book_collection)) + " books in your collection.\n")
+    
